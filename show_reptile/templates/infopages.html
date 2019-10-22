@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>自强任务_结果</title>
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		
+		<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+		<nav aria-label = "Page-navigation">
+	<div>
+		<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>搜索结果</th>
+			</tr>
+		</thead>
+		{% for info in info_list %}
+			<tr>
+				<th><a href="show_one_article/?article_title={{info.title}}">{{info.title}}</a></th>
+			</tr>
+		{% endfor %}
+		</table>
+	</div>
+	<ul class="pagination">
+		{% if info_list.has_previous %}
+			<li >
+				<a href = "?page={{info_list.previous_page_number}}&search={{str}}"  aria-label = "Previous">
+					<span aria-hidden = "true"> &laquo;</span>
+				</a>
+			</li>
+		{% endif %}
+		
+		{% for pg in info_list.paginator.page_range%}
+			{% if info_list.number == pg %}
+				<li class = "active"><a href="?page={{pg}}&search={{str}}">{{pg}}</a></li>
+			{% else %}
+				<li><a href="?page={{pg}}&search={{str}}">{{pg}}</a></li>
+			{% endif %}
+		{% endfor %}
+
+		{% if info_list.has_next %}
+			<li >
+				<a href = "?page={{info_list.next_page_number}}&search={{str}}"  aria-label = "Next">
+					<span aria-hidden = "true"> &raquo;</span>
+				</a>
+			</li>
+		{% endif %}
+	</ul>
+</nav>
+
+
+		
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

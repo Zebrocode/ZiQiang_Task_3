@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>自强任务</title>
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<p>输入你想搜索的相关内容</p>
+		<form  method="get" id="formsearch">
+			search: <input type="text" id="search" name="search"> <br>		
+			<input type="submit" id="button" value="提交" >
+		</form>
+		<!--
+		<div id="dict">Ajax 加载字典</div>
+		<p id="dict_result"></p>
+		
+
+		<script>
+			function search_backend(){
+					var formData = new FormData();
+        				formData.append('search', $('#search').val())
+					//ajax数据提交代码
+					$.ajaxSetup({data: {csrfmiddlewaretoken: '{{ csrf_token }}'}});
+					$.ajax({
+        					type: 'POST',
+        					url: "{% url 'infopages' %}", //路由加'/'否则会报ssh错误
+        					data: formData,
+        					processData:false,
+                				contentType:false,
+        					success: function(data){
+							console.log(data)
+							/*
+							//$('#dict_result').html('');//清空之前的内容
+							//$('#dict_result').append(data['all']);
+							$('#dict_result').append("coming---------------------");
+            							$.each(data,function(key,value){
+									$.each(value,function(key_,value_){
+										$.each(value_,function(key__,value__){
+											$('#dict_result').append(key__+":"+value__+"<br>")
+										})
+										
+									})
+		
+								});
+        				
+							*/
+            						//location.reload()    //成功刷新界面
+        					}
+
+    					})
+				
+				
+				}
+			
+		</script>
+		-->
+
+		<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
